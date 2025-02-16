@@ -1,0 +1,187 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --background: #f5f5f5;
+    --surface: white;
+    --text: #333;
+    --border: #ddd;
+    --primary: #2d7a4c;
+    --primary-hover: #27693e;
+    --success-bg: #e3fcec;
+    --success-text: #2d7a4c;
+}
+
+[data-theme="dark"] {
+    --background: #1a1a1a;
+    --surface: #2d2d2d;
+    --text: #ffffff;
+    --border: #404040;
+    --primary: #4CAF50;
+    --primary-hover: #45a049;
+    --success-bg: #1e382a;
+    --success-text: #4CAF50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.container {
+    position: relative;
+    background: var(--surface);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;  /* Increased to accommodate side-by-side layout */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr 300px;  /* Create two columns */
+    gap: 20px;
+    align-items: start;
+}
+
+.main-content {
+    grid-column: 1;
+}
+
+.budgeting-goals {
+    grid-column: 2;
+    margin-top: 0;
+    padding: 15px;
+    background: var(--background);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    height: fit-content;
+}
+
+h2 {
+    color: var(--text);
+}
+
+h3 {
+    color: var(--text);
+}
+
+.balance h3 {
+    background: var(--success-bg);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--success-text);
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    font-size: 16px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    background: var(--background);
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: var(--text);
+}
+
+.expense {
+    color: red;
+}
+
+.income {
+    color: green;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-button {
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    background: var(--surface);
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#goals-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background: var(--background);
+    border-radius: 5px;
+}
+
+#goals-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .main-content, .budgeting-goals {
+        grid-column: 1;
+    }
+    
+    .budgeting-goals {
+        margin-top: 20px;
+    }
+}
