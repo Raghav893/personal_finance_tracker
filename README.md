@@ -42,7 +42,7 @@ Local Storage – Saving transactions and goals
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/personal-finance-tracker.git
+git clone https://github.com/Raghav893/personal-finance-tracker.git
 cd personal-finance-tracker
 
 2️⃣ Open in Browser
